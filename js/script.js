@@ -374,7 +374,7 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
     return;
   }
 
-  let msg = "🛍️ *Nuevo pedido desde el catálogo:*\n\n";
+  let msg = "🛍️ *Quiero comenzar este pedido:*\n\n";
   let total = 0;
   let totalProductos = 0;
 
@@ -398,9 +398,9 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
       : `📦 *Total de productos:* ${totalProductos}`;
 
   msg += `\n${productosTexto}`;
-  msg += `\n🚚 *Envío:* (a completar)`;
+  msg += `\n🚚 *Envío:* $a completar`;
   msg += `\n💵 *Total:* *$${total.toLocaleString("es-AR")}*`;
-  msg += `\n\nQuiero continuar con este pedido y calcular el envío a mi ciudad.`;
+  msg += `\n\nQuiero calcular el envío a mi ciudad.`;
 
   window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, "_blank");
 });
