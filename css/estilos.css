@@ -932,22 +932,23 @@ html { scroll-behavior: smooth; }
   }
   
   nav a {
-    font-size: 1.7rem;
+    font-size: 1.26rem;
     padding: 0.1rem;
     font-style: italic;
     font-family: fantasy;
     font-variant-caps: all-petite-caps;
     font-weight: bold;            /* 🔹 Negrita */
     text-decoration: underline;
+    padding-top: 0rem;
   }
 
   .hero {
-    padding-top: 8rem; /* menos espacio arriba en móvil */
+    padding-top: 7rem; /* menos espacio arriba en móvil */
   }
 
   .hero h2,
   .hero p {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin: 1rem 0;
     text-align: left;
     font-family: fantasy;
