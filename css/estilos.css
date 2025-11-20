@@ -1031,7 +1031,7 @@ html { scroll-behavior: smooth; }
   transform: translateX(-50%);
   border: 2px solid #09000a;
   width: 320px;
-  height: 380px;
+  height: 450px;
   max-width: 90%;
   padding: 15px 20px;
   border-radius: 12px;
@@ -1067,6 +1067,7 @@ html { scroll-behavior: smooth; }
 }
 #cerrar-carrito:hover {
   color: #c62828;
+
 }
 
 #carrito-items {
@@ -1076,6 +1077,7 @@ html { scroll-behavior: smooth; }
   position: relative;
   z-index: 1001; /* por encima de todo lo que pueda taparlo */
   pointer-events: auto; /* permite usar el scroll normalmente */
+  font-size: 1.5rem;
 }
 
 /* Scroll personalizado para el carrito */
@@ -1084,7 +1086,7 @@ html { scroll-behavior: smooth; }
 }
 
 #carrito-items::-webkit-scrollbar-track {
-  background: #f3e5f5;
+  background: #e973fc;
   border-radius: 6px;
 }
 
@@ -1099,7 +1101,7 @@ html { scroll-behavior: smooth; }
 
 .carrito-item {
   padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #080808;
   text-align: left;
 }
 
@@ -1107,7 +1109,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   align-items: left;
-  gap: 6px;
+  gap: 7px;
 }
 
 .carrito-cantidad-controles {
@@ -1134,7 +1136,7 @@ html { scroll-behavior: smooth; }
 .carrito-eliminar {
   background: transparent;
   border: none;
-  color: #d32f2f;
+  color: #080707;
   font-size: 18px;
   cursor: pointer;
   margin-left: 6px;
@@ -1174,6 +1176,7 @@ html { scroll-behavior: smooth; }
   margin-top: 8px;
   font-weight: bold;
   color: #080000;
+  font-size: 1.7rem;
 }
 
 /* Ajustes del modal en pantallas pequeñas */
