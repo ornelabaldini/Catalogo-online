@@ -361,7 +361,7 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
           carritoDropdown.style.display = "block";
           fondoModal.style.display = "block";
         }
-        else if (texto.includes("consulta")) {
+        else if (texto.includes("promo")) {
           const msg = "💬 Hola, quiero consultar sobre *" + nombre + "*.";
           window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, "_blank");
         }
