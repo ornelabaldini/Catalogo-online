@@ -1,8 +1,3 @@
-
-
-// ========================
-// MODAL DE PRODUCTOS
-// ========================
 const modal = document.getElementById('modal'); 
 if (modal) {
   const modalImg = document.getElementById('modal-img');
@@ -270,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     transform: "translate(-50%, -50%)",
     boxShadow: "0 0 15px rgba(0,0,0,0.4)",
     borderRadius: "12px",
-    background: "#fff",
+    background: "#f1ededff",
     display: "none",
     padding: "15px",
     width: "300px",
@@ -285,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "<p class='carrito-vacio'>🛍️ Tu carrito está vacío - Compra mínima: 7 productos</p>"
       : carrito.map(i=>`
         <div class='carrito-item'>
-          <strong>- ${i.nombre}</strong> - ${i.precio}<br>
+          <strong> ${i.nombre}</strong>  ${i.precio}<br>
           <button class='cantidad-btn restar' data-nombre='${i.nombre}'>-</button>
           ${i.cantidad}
           <button class='cantidad-btn sumar' data-nombre='${i.nombre}'>+</button>
