@@ -1,7 +1,4 @@
-/* ==============================
-   Root / variables globales
-   ============================== */
-/* Define colores y valores reusables */
+
 :root {
   /* color principal violeta */
   --primary: #6a1b9a;
@@ -20,15 +17,11 @@
   --border-radius: 10px;
 }
 
-/* ==============================
-   Reset / básicos
-   ============================== */
 /* box-sizing global para evitar problemas de cálculo de ancho */
 * {
   box-sizing: border-box;
 }
 
-/* estilos base del html y body */
 html, body {
   margin: 0;                            /* quita margen por defecto del navegador */
   padding: 0;                           /* quita padding por defecto */
@@ -40,9 +33,6 @@ html, body {
   font-size: var(--base-font);          /* tamaño base de fuente */
 }
 
-/* ==============================
-   Header / barra superior fija
-   ============================== */
 header {
   background: linear-gradient(135deg, #6a1b9a, #ab47bc); /* degradado de fondo del header */
   padding: 0.2rem;                                       /* espacio interno del header */
@@ -96,14 +86,11 @@ header {
   padding: 0 1rem;                                     /* padding horizontal */
 }
 
-/* ==============================
-   Navegación principal (links)
-   ============================== */
 nav {
   display: flex;                                       /* layout flex para los enlaces */
   justify-content: center;                             /* centra la navegación */
   align-items: center;                                 /* alinea verticalmente */
-  gap: 1.5rem;                                         /* separación entre enlaces */
+  gap: 0.5rem;                                         /* separación entre enlaces */
   flex-wrap: wrap;                                     /* permite que los enlaces salten línea si hace falta */
 }
 
@@ -113,7 +100,7 @@ nav a {
   color: #070000;                                      /* color de texto de los enlaces */
   text-decoration: none;                               /* sin subrayado */
   font-weight: bold;                                   /* negrita */
-  font-size: 2rem;                                  /* tamaño razonable para el nav */
+  font-size: 3rem;                                  /* tamaño razonable para el nav */
   transition: color 0.3s;                              /* transición suave al hover */
   margin: 0.25rem;                                     /* pequeño margen alrededor */
   font-style: italic;
@@ -124,9 +111,6 @@ nav a:hover {
   color: var(--accent);
 }
 
-/* ==============================
-   Hero section (cabecera visual)
-   ============================== */
 .hero {
   text-align: center;                                  /* centra el texto del hero */
   padding-top: 10rem;                             /* espacio extra arriba (visual) */
@@ -194,13 +178,10 @@ nav a:hover {
   transform: scale(1.03);                              /* pequeño zoom */
 }
 
-/* ==============================
-   Destacados
-   ============================== */
 .destacados {
   text-align: center;                                  /* centra el texto */
   padding: 0.8rem 1rem;                                /* padding interno cómodo */
-  background: #fff;                                    /* fondo blanco */
+  background: #0a0909;                                    /* fondo blanco */
   border-radius: 0px;                 /* bordes redondeados */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);             /* sombra suave */
   font-size: 1rem;                                     /* tamaño de fuente */
@@ -219,9 +200,6 @@ nav a:hover {
   text-align: center;                                  /* centrado */
 }
 
-/* ==============================
-   Portfolio / Catálogo (grid)
-   ============================== */
 .portfolio {
   display: grid;                                       /* grid layout para tarjetas */
   grid-template-columns: repeat(4, 1fr);               /* 4 columnas en desktop */
@@ -234,7 +212,6 @@ nav a:hover {
   border-radius: 0px;
 }
 
-/* alias por si usas .catalogo */
 .catalogo {
   display: grid;                                       /* grid también para catalogo */
   grid-template-columns: inherit;                      /* hereda columnas (por simplicidad) */
@@ -244,9 +221,6 @@ nav a:hover {
   
 }
 
-/* ==============================
-   Card (tarjeta de producto)
-   ============================== */
 .card {
   background: #fff;                                    /* fondo blanco para la tarjeta */
   border: 2px solid var(--accent);                     /* borde con color de acento */
@@ -264,7 +238,7 @@ nav a:hover {
   height: 100%;                                        /* que la tarjeta ocupe el alto del grid cell */
   box-sizing: border-box;                              /* box-sizing */
   min-height: 260px;                                   /* altura mínima para consistencia visual */
-  position: relative; /* necesario para colocar el overlay */
+  position: relative;                                  /* necesario para colocar el overlay */
 }
 
 .card .mas-fotos {
@@ -309,6 +283,7 @@ nav a:hover {
   text-align: center;                                  /* centrado */
   padding: 0 0.5rem;                                   /* relleno horizontal */
   flex-grow: 0;                                        /* no expandir */
+  font-weight: bold;
 }
 /* descripción breve dentro de la tarjeta */
 .card p {
@@ -322,7 +297,6 @@ nav a:hover {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
 
 /* botón compacto dentro de la card */
 .card button {
@@ -358,9 +332,6 @@ nav a:hover {
   margin-top: auto;
 }
 
-/* ==========================
-   Modal principal
-   ========================== */
 .modal {
   display: none;
   position: fixed;
@@ -375,6 +346,8 @@ nav a:hover {
   padding: 1rem;
   box-sizing: border-box;
   overflow: auto;
+  border-radius: 10px;
+  
 }
 
 /* Contenido interior */
@@ -383,7 +356,7 @@ nav a:hover {
   width: 90%;
   max-height: 90%;
   background: #6a1b9a;
-  color: #fff;
+  color: #000000;
   padding: 1rem;
   border-radius: 12px;
   text-align: center;
@@ -397,6 +370,7 @@ nav a:hover {
   animation: fadeIn 0.25s ease;
   border: 3px solid;
   border-image: linear-gradient(45deg, var(--primary), var(--accent)) 1;
+  font-style: italic;
 }
 
 /* Imagen del modal */
@@ -470,30 +444,31 @@ nav a:hover {
   display: flex;
   gap: 10px;
   justify-content: center;
+  border-radius:10px;
 }
 
 .modal-botones button {
   padding: 10px 15px;
-  border: none;
+  border: black;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.3s;
   flex: 1 1 auto;       /* que puedan crecer o reducirse */
   min-width: 80px;      /* evita que queden demasiado pequeños */
-
-  
 }
 
 #modal-agregar {
-  background-color: #27ae60;
-  color: white;
+  background: linear-gradient(59deg, var(--accent), var(--primary));  /* invertir degradado */
+  color: rgb(0, 0, 0);
   margin-top:-20px;
+  box-sizing: border-box;
+  
 }
 
 #modal-consulta {
   background-color: #3498db;
-  color: white;
+  color: rgb(14, 12, 12);
   margin-top:-20px;
 }
 
@@ -537,10 +512,6 @@ nav a:hover {
 .cantidad-btn:hover { background: #8e24aa; transform: scale(1.1); }
 .cantidad { min-width: 20px; display: inline-block; text-align: center; }
 
-
-/* ==============================
-   Buscador (centro del catálogo)
-   ============================== */
 .buscador {
   text-align: center;                                  /* centra el buscador */
   margin: 1rem 0;                                      /* margen arriba y abajo */
@@ -606,16 +577,14 @@ nav a:hover {
   transform: scale(1.03);                              /* ligero zoom */
 }
 
-/* ==============================
-   Main (contenedor principal)
-   ============================== */
+
 main {
   max-width: var(--content-max-w);                     /* ancho máximo del contenido */
   margin: 0 auto;                                      /* centrar horizontalmente */
   width: 100%;                                         /* ocupar ancho */
   min-height: 60vh;                                    /* altura mínima para buena presencia */
   font-size: 1rem;                                     /* tamaño base de fuente */
-  background: #fcfbfb;                                 /* fondo blanco para la zona principal */
+  background: #030303;                                 /* fondo blanco para la zona principal */
   border-radius: var(--border-radius);                 /* bordes redondeados */
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);             /* sombra sutil */
   overflow: visible;                                   /* overflow visible por defecto */
@@ -624,9 +593,6 @@ main {
   border-radius: 0px 0px;
 }
 
-/* ==============================
-   Footer y botones sociales
-   ============================== */
 footer {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
@@ -635,7 +601,6 @@ footer {
   font-size: 0.9rem;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
   margin-top: 1rem;
-
 }
 
 footer p {
@@ -778,7 +743,7 @@ html { scroll-behavior: smooth; }
 
 /* tarjeta de sección */
 .seccion {
-  background: #fff;                                    /* fondo blanco */
+  background: #a7a6a6;                                    /* fondo blanco */
   border: 1px solid var(--accent);                     /* borde con acento */
   border-radius: var(--border-radius);                 /* radio */
   padding: 0.3rem;                                     /* padding */
@@ -797,10 +762,6 @@ html { scroll-behavior: smooth; }
   font-size: 1.5rem;                                   /* tamaño para h2 */
   text-align: center;                                  /* centrado */
 }
-
-/* ==============================
-   MEDIA QUERIES / RESPONSIVE
-   ============================== */
 
 /* Tablets medianas y grandes */
 @media (max-width: 1024px) {
@@ -927,12 +888,12 @@ html { scroll-behavior: smooth; }
   }
 
   .titulo-contenedor h1 {
-    font-size: 1.2rem; /* título header más pequeño */
+    font-size: 1.4rem; /* título header más pequeño */
     font-family: fantasy;
   }
   
   nav a {
-    font-size: 1.5rem;
+    font-size: 2rem;
     padding: 0.1rem;
     font-style: italic;
     font-family: fantasy;
@@ -982,9 +943,6 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* =======================
-   🛒 Carrito flotante (no rompe el header)
-   ======================= */
 #carrito-contenedor {
   position: fixed;
   bottom: 20px;
@@ -1022,7 +980,6 @@ html { scroll-behavior: smooth; }
   padding: 3px 6px;
 }
 
-/* 🛒 Estilos del carrito */
 #carrito-dropdown {
   position: fixed;
   top: 20%;
