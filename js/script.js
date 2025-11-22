@@ -229,16 +229,12 @@ if (modalImg) {
   };
 }
 
-
-
   window.onclick = e => {
     if (e.target === modal) {
       modal.style.display = "none";
       modalImg.classList.remove("zoomed");
     }
   };
-
-
 
 // ========================
 //  CARRITO COMPLETO CON MODAL, CIERRE Y WHATSAPP
@@ -289,18 +285,26 @@ document.addEventListener("DOMContentLoaded", () => {
       ? "<p class='carrito-vacio'>🛍️ Tu carrito está vacío - Compra mínima: 7 productos</p>"
       : carrito.map(i=>`
         <div class='carrito-item'>
-          <strong>${i.nombre}</strong> - ${i.precio}<br>
+          <strong>- ${i.nombre}</strong> - ${i.precio}<br>
           <button class='cantidad-btn restar' data-nombre='${i.nombre}'>-</button>
           ${i.cantidad}
           <button class='cantidad-btn sumar' data-nombre='${i.nombre}'>+</button>
-          <button class='carrito-eliminar' data-nombre='${i.nombre}'>✖</button>
         </div>
       `).join("");
-
+      // <button class='carrito-eliminar' data-nombre='${i.nombre}'>✖</button>
+    
     const total = calcularTotal();
     carritoTotal.innerHTML = `<strong>Total: $${total.toLocaleString("es-AR")}</strong>`;
     carritoCount.textContent = carrito.reduce((a,i)=>a+i.cantidad,0);
     localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    const totalProductos = carrito.reduce((a,i)=>a+i.cantidad,0);
+
+    carritoTotal.innerHTML = `
+      <strong>Cantidad de productos: ${totalProductos}</strong><br>
+      <strong>Total: $${total.toLocaleString("es-AR")}</strong>
+    `;
+
   }
 
   // Mostrar/ocultar carrito

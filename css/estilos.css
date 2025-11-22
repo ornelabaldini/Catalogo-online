@@ -1119,7 +1119,7 @@ html { scroll-behavior: smooth; }
 }
 /* botones carrito  de cantidad*/
 .cantidad-btn {
-  background: #9c27b0;
+  background: #000000;
   border: none;
   color: #fff;
   padding: 4px 10px;
@@ -1132,6 +1132,7 @@ html { scroll-behavior: smooth; }
   background: #7b1fa2;
 }
 
+/*
 .carrito-eliminar {
   background: transparent;
   border: none;
@@ -1140,7 +1141,7 @@ html { scroll-behavior: smooth; }
   cursor: pointer;
   margin-left: 6px;
 }
-
+*/
 .btn-vaciar {
   background: #ccc;
   border: none;
