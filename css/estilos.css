@@ -932,7 +932,7 @@ html { scroll-behavior: smooth; }
   }
   
   nav a {
-    font-size: 1.26rem;
+    font-size: 1.5rem;
     padding: 0.1rem;
     font-style: italic;
     font-family: fantasy;
@@ -992,7 +992,6 @@ html { scroll-behavior: smooth; }
   z-index: 1000;
   
 }
-
 
 #carrito-btn {
   background: #6a1b9a;
