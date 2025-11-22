@@ -1020,14 +1020,17 @@ html { scroll-behavior: smooth; }
 }
 
 #carrito-items {
-  max-height: 240px;
+  max-height: 210px;
   overflow-y: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   position: relative;
   z-index: 1001; /* por encima de todo lo que pueda taparlo */
   pointer-events: auto; /* permite usar el scroll normalmente */
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding-right: 10px;
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0%;
 }
 
 /* Scroll personalizado para el carrito */
@@ -1046,28 +1049,27 @@ html { scroll-behavior: smooth; }
 }
 
 #carrito-items::-webkit-scrollbar-thumb:hover {
-  background: #7b1fa2;
-  
+  background: #7b1fa2;  
 }
 
 .carrito-item {
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* evita el espacio en blanco */
+  align-items: left;
+  justify-content: flex-start;
   gap: 10px;
   width: 100%;
   padding: 10px 5px;
   border-bottom: 3px solid #080808;
-  
+  flex-wrap: nowrap;   /* evitas que se vaya a otra línea */
+  overflow: visible;   /* para que la línea no se corte */
 }
+
 
 .carrito-item-info {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: left;
   gap: 10px;
-  flex: 1; /* ocupa el espacio sobrante */
-  
 }
 
 .carrito-sidebar {
@@ -1087,7 +1089,7 @@ html { scroll-behavior: smooth; }
   margin-bottom: 20px;
   z-index: 6000; /* extra seguridad */
   position: relative;
-  
+  text-align: left;
 }
 .carrito-sidebar * {
   pointer-events: auto;
@@ -1101,6 +1103,9 @@ html { scroll-behavior: smooth; }
   flex-wrap: wrap; /* evita que los elementos se salgan */
   width: 100%;
   overflow: hidden;
+  text-align: left;
+  padding-right: 0px;
+  padding-left: 0px;
   
 }
 
@@ -1118,8 +1123,7 @@ html { scroll-behavior: smooth; }
   padding: 4px 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 20px;
-  margin-top: 0.2rem;
+  font-size: 17px;
 }
 .cantidad-btn:hover {
   background: #7b1fa2;
@@ -1171,6 +1175,7 @@ html { scroll-behavior: smooth; }
   font-weight: bold;
   color: #080000;
   font-size: 1.7rem;
+  text-align: left;
 }
 
 /* Ajustes del modal en pantallas pequeñas */
