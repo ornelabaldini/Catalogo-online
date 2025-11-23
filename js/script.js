@@ -296,8 +296,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalProductos = carrito.reduce((a,i)=>a+i.cantidad,0);
 
     carritoTotal.innerHTML = `
-      <strong>Cantidad de productos: ${totalProductos}</strong><br>
-      <strong>Total: $${total.toLocaleString("es-AR")}</strong>
+      <strong>- Cantidad de productos: ${totalProductos}</strong><br>
+      <strong>- Total: $${total.toLocaleString("es-AR")}</strong>
     `;
 
   }
