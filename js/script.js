@@ -20,7 +20,7 @@ if (modal) {
 
   const imagenesProducto = {
     "Alcancias con 12 gelatinas": ["img/alcancias1.jpg","img/alcancias2.jpg","img/alcancias3.jpg"],
-    //"Alcancias con 12 gelatinas Pinguino": ["img/pinguino2.jpg","img/alcanciapinguino.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
+    "Alcancias con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
     "Chupetines Merlina (x30u)": ["img/merlina1.jpg","img/merlina2.jpg","img/merlina3.jpg","img/merlina4.jpg"],
     "Chupetin con polvo acido Brain(30u)": ["img/braincaja.jpg","img/chupetinBrain.jpg"],
     "Chupetin con polvo acido skull (30u)": ["img/chupetinConAcido.jpg","img/cajaChupetinAcido.jpg"],
