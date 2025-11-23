@@ -406,6 +406,5 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
 
 actualizarCarrito();
 
-
 });
 
