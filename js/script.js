@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function actualizarCarrito() {
     carritoItemsContainer.innerHTML = carrito.length === 0
-      ? "<p class='carrito-vacio'>🛍️ Tu carrito está vacío - Compra mínima: 7 productos</p>"
+      ? "<p class='carrito-vacio'>🛍️ Tu carrito está vacío</p>"
       : carrito.map(i=>`
         <div class='carrito-item'>
           <strong> ${i.nombre}</strong>  ${i.precio}<br>
