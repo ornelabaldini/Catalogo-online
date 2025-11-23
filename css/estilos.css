@@ -239,6 +239,7 @@ nav a:hover {
   box-sizing: border-box;                              /* box-sizing */
   min-height: 260px;                                   /* altura mínima para consistencia visual */
   position: relative;                                  /* necesario para colocar el overlay */
+  border-radius: 10px;
 }
 
 .card .mas-fotos {
@@ -269,6 +270,7 @@ nav a:hover {
   height: 220px;                                       /* altura fija para consistencia */
   object-fit: cover;                                   /* cubre sin deformar (recorta si hace falta) */
   transition: transform 0.3s;                          /* transición para posibles efectos */
+  border-radius: 10px;
 }
 
 /* título de producto dentro de la card */
@@ -288,7 +290,7 @@ nav a:hover {
 /* descripción breve dentro de la tarjeta */
 .card p {
   margin: 0.25rem 0 0.5rem 0;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #555;
   font-weight: 600;
   line-height: 1.2;
@@ -315,7 +317,6 @@ nav a:hover {
   font-weight: bold;                                   /* negrita */
   letter-spacing: 0.04rem;                             /* ligero tracking */
 }
-
 /* hover del botón */
 .card button:hover {
   background: linear-gradient(45deg, var(--accent), var(--primary));  /* invertir degradado */
@@ -864,7 +865,7 @@ html { scroll-behavior: smooth; }
   }
 
   .card p {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -1059,7 +1060,7 @@ html { scroll-behavior: smooth; }
   gap: 10px;
   width: 100%;
   padding: 10px 5px;
-  border-bottom: 3px solid #080808;
+  border-bottom: 3px solid #680263;
   flex-wrap: nowrap;   /* evitas que se vaya a otra línea */
   overflow: visible;   /* para que la línea no se corte */
 }
@@ -1076,7 +1077,7 @@ html { scroll-behavior: smooth; }
   position: absolute;
   right: 20px;
   top: 80px;
-  background-color: #121212;
+  background-color: #770f69;
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -1173,7 +1174,7 @@ html { scroll-behavior: smooth; }
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: bold;
-  color: #080000;
+  color: #000000;
   font-size: 1.7rem;
   text-align: left;
 }
@@ -1198,8 +1199,9 @@ html { scroll-behavior: smooth; }
 
   .modal h2,
   .modal p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center;
+    font-weight: bold;
   }
 
   .modal button,
