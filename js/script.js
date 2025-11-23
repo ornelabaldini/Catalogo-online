@@ -39,7 +39,7 @@ if (modal) {
     "Trompetas con chupetin y sonido (30u)": ["img/trompeta1.jpg","img/trompetas.jpg"],
     "Sorpresa capibara + chicles (x30u)": ["img/sorpresacapibara1.jpg","img/sorpresacapibara2.jpg"],
     "Sorpresa plantas vs Zombies y chicles (x30u)": ["img/sorpresaplant2.jpg","img/sorpresaplant.jpg"],
-    "Gomitas blandas Frutillas (30u)": ["img/frutilla1.jpg","img/frutilla.jpg"],
+    //"Gomitas blandas Frutillas (30u)": ["img/frutilla1.jpg","img/frutilla.jpg"],
     "Gomitas blandas Fantasmita (30u)": ["img/fantasmitas.jpg","img/fantasmitas2.jpg"],
     "Gomitas blandas Batman (30u)": ["img/batman1.jpg","img/batman2.jpg"],
     "Monedas de chocolate (x250u)": ["img/monedas1.jpg","img/monedas2.jpg"],
