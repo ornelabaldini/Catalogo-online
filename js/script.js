@@ -54,9 +54,9 @@ if (modal) {
     //"Gomitas blandas Ojos (30u)": ["img/ojos.jpg","img/videoojos.mp4"],
     "Caramelo Pinta boca (30u)": ["img/pintaboca1.jpg","img/pintaboca2.jpg","img/pintaboca3.jpg"],
     "Chupetines LED Mc Donalds (x30)": ["img/mc.jpg","img/mc2.jpg",],
-    "Chupetines light Simpsons (x30)": ["img/donut1.jpg","img/donut2.jpg","img/donut3.jpg","img/donut4.jpg","img/donut5.jpg"],
+    //"Chupetines light Simpsons (x30)": ["img/donut1.jpg","img/donut2.jpg","img/donut3.jpg","img/donut4.jpg","img/donut5.jpg"],
     "Chupetines LED Oreo (x30)": ["img/oreo1.jpg","img/oreo2.jpg",],
-    "Monster Eyes con LED (x30)": ["img/monsterojo.jpg","img/monsterojo1.jpg"],
+    //"Monster Eyes con LED (x30)": ["img/monsterojo.jpg","img/monsterojo1.jpg"],
     "Chupetines LED unicornio (x30)": ["img/unicornioled1.jpg","img/unicornioled2.jpg"],
     
   };
