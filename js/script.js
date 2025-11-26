@@ -50,7 +50,7 @@ if (modal) {
     "Chupetines con forma de unicornio (x30)":["img/unicornio2.jpg","img/unicornio1.jpg","img/unicornio3.jpg"],
     "Mechas magicas (30u)":["img/mechasMario2.jpg", "img/mecha.jpg",],
     "Gomitas blandas Super Mario (30u)": ["img/supermario1.jpg","img/supermario2.jpg"],
-    " Saca lenguas (30u)": ["img/sacalenguas1.jpg","img/sacalenguas2.jpg"],
+    "Saca lenguas (30u)": ["img/sacalenguas1.jpg","img/sacalenguas2.jpg"],
     //"Gomitas blandas Ojos (30u)": ["img/ojos.jpg","img/videoojos.mp4"],
     //"Caramelo Pinta boca (30u)": ["img/pintaboca1.jpg","img/pintaboca2.jpg","img/pintaboca3.jpg"],
     "Chupetines LED Mc Donalds (x30)": ["img/mc.jpg","img/mc2.jpg",],
