@@ -98,7 +98,7 @@ nav {
 nav a {
   display: inline-block;                               /* inline-block para padding y margin */
   color: #070000;                                      /* color de texto de los enlaces */
-  text-decoration: none;                               /* sin subrayado */
+  text-decoration: underline;                               /* sin subrayado */
   font-weight: bold;                                   /* negrita */
   font-size: 3rem;                                  /* tamaño razonable para el nav */
   transition: color 0.3s;                              /* transición suave al hover */
@@ -886,7 +886,7 @@ html { scroll-behavior: smooth; }
   }
   
   nav a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding: 0.1rem;
     font-style: italic;
     font-family: fantasy;
