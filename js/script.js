@@ -19,8 +19,7 @@ if (modal) {
   modalContent.appendChild(contador);
 
   const imagenesProducto = {
-    "Alcancias con 12 gelatinas": ["img/alcancias1.jpg","img/alcancias2.jpg","img/alcancias3.jpg"],
-    "Alcancias con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
+    "Alcancia con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
     "Chupetines Merlina (30u)": ["img/merlina1.jpg","img/merlina2.jpg","img/merlina3.jpg","img/merlina4.jpg"],
     "Chupetin con polvo acido Brain(30u)": ["img/braincaja.jpg","img/chupetinBrain.jpg"],
     "Chupetin con polvo acido skull (30u)": ["img/chupetinConAcido.jpg","img/cajaChupetinAcido.jpg"],
@@ -34,12 +33,10 @@ if (modal) {
     "Gelatinas con formas (30u)": ["img/gelatinaDiferentesSabores4.jpg","img/gelatinaDiferentesSabores3.jpg","img/gelatinaDiferentesSabores2.jpg","img/gelatinaDiferentesSabores5.jpg","img/gelatinaDiferentesSabores1.jpg"],
     "Chupetines de Corona con con led (30u)": ["img/chupetinesconled1.jpg","img/corona2.jpg"],
     "Gomitas cara (30u)": ["img/gomitablandaCara3.jpg","img/gomitablandaCara2.jpg"],
-    //"Gomitas blandas Selección (30u)": ["img/seleccion.jpg","img/seleccion1.jpg","img/seleccion2.jpg"],
     "Cool Mint sabores frutales (30u)": ["img/coolmint.jpg","img/coolmint2.jpg"],
     "Trompetas con chupetin y sonido (30u)": ["img/trompeta1.jpg","img/trompetas.jpg"],
     "Sorpresa capibara + chicles (30u)": ["img/sorpresacapibara1.jpg","img/sorpresacapibara2.jpg"],
     "Sorpresa plantas vs Zombies y chicles (30u)": ["img/sorpresaplant2.jpg","img/sorpresaplant.jpg"],
-    //"Gomitas blandas Frutillas (30u)": ["img/frutilla1.jpg","img/frutilla.jpg"],
     "Gomitas blandas Fantasmita (30u)": ["img/fantasmitas.jpg","img/fantasmitas2.jpg"],
     "Gomitas blandas Batman (30u)": ["img/batman1.jpg","img/batman2.jpg"],
     "Monedas de chocolate 🪙 (250u)": ["img/monedas1.jpg","img/monedas2.jpg"],
@@ -51,12 +48,8 @@ if (modal) {
     "Mechas magicas (30u)":["img/mechasMario2.jpg", "img/mecha.jpg",],
     "Gomitas blandas Super Mario (30u)": ["img/supermario1.jpg","img/supermario2.jpg"],
     "Saca lenguas (30u)": ["img/sacalenguas1.jpg","img/sacalenguas2.jpg"],
-    //"Gomitas blandas Ojos (30u)": ["img/ojos.jpg","img/videoojos.mp4"],
-    //"Caramelo Pinta boca (30u)": ["img/pintaboca1.jpg","img/pintaboca2.jpg","img/pintaboca3.jpg"],
     "Chupetines con led Mc Donalds (30u)": ["img/mc.jpg","img/mc2.jpg",],
-    //"Chupetines light Simpsons (30u)": ["img/donut1.jpg","img/donut2.jpg","img/donut3.jpg","img/donut4.jpg","img/donut5.jpg"],
     "Chupetines con led Oreo (30u)": ["img/oreo1.jpg","img/oreo2.jpg",],
-    //"Monster Eyes con LED (30u)": ["img/monsterojo.jpg","img/monsterojo1.jpg"],
     "Chupetines con led unicornio (30u)": ["img/unicornioled1.jpg","img/unicornioled2.jpg"],
     
   };
