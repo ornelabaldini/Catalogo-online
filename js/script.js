@@ -25,7 +25,7 @@ if (modal) {
     "Chupetin con polvo acido Brain(30u)": ["img/braincaja.jpg","img/chupetinBrain.jpg"],
     "Chupetin con polvo acido skull (30u)": ["img/chupetinConAcido.jpg","img/cajaChupetinAcido.jpg"],
     "Autos de carrera con chicles(30u)": ["img/carrera.jpg","img/reversacarrera.jpg"],
-    "Brochetas de ojos (x30 brochetas)": ["img/brochetas2.jpg", "img/brochetas3.jpg",],
+    "Brochetas de ojos (30u)": ["img/brochetas2.jpg", "img/brochetas3.jpg",],
     " Camiseta pimball + pastillitas (x30)": ["img/pimballremera.jpg","img/reversaremera.jpg","img/r1.jpg","img/r2.jpg"],
     "Celu + chicles(x30)": ["img/pimballip.jpg","img/reversaip.jpg"],
     "Chupetin Calabaza conpolvo ácido (30u)": ["img/chupetinCalabaza.jpg","img/chupetincalabaza1.jpg","img/chupetincalabaza2.jpg"],
