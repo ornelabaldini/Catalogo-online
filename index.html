@@ -21,6 +21,18 @@
       <a href="contacto.html">Contacto</a>
       <input type="text" id="search" placeholder="🔍 Buscá un producto..." style="margin-left:0.1rem; padding:0.3rem; border-radius:5px; border:none;">
       <p id="no-results" style="display:none; text-align:center; color:#fff; margin-top:0.5rem;"></p>
+          <div id="aviso-envio-gratis" 
+        style="display:none; 
+                background:#4caf50; 
+                color:white; 
+                padding:10px; 
+                margin:10px 0; 
+                border-radius:8px; 
+                font-weight:bold; 
+                text-align:center;">
+      🎉 Felicidades! Alcanzaste los $70.000 — Tenés ENVÍO GRATIS 🎉
+    </div>
+
     </nav>
   </div>
 
@@ -34,7 +46,7 @@
 
     <div id="carrito-dropdown">
       <span id="cerrar-carrito" style="cursor:pointer; float:right; font-size:30px; font-weight:bold; margin:5px;">✖</span>
-      <h3>🛒 Compra mínima: $50.000</h3>
+      <h3>Compra mínima: $50.000 </h3>
       <ul id="carrito-items"></ul>
       <p id="carrito-total">Total: $0</p>
       <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
@@ -871,6 +883,9 @@
   -->
 
 <script src="js/script.js"></script>
+
+<!-- Cartel flotante general -->
+<div id="toast" class="toast"></div>
 
 </body>
 </html>

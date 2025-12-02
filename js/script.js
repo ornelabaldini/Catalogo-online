@@ -1,3 +1,6 @@
+// ========================
+// MODAL DE PRODUCTOS
+// ========================
 const modal = document.getElementById('modal'); 
 if (modal) {
   const modalImg = document.getElementById('modal-img');
@@ -17,8 +20,8 @@ if (modal) {
   modalContent.appendChild(prevBtn);
   modalContent.appendChild(nextBtn);
   modalContent.appendChild(contador);
-  
-// Productos
+
+  // Productos
   const imagenesProducto = {
     "Alcancia con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
     "Chupetines Merlina (30u)": ["img/merlina1.jpg","img/merlina2.jpg","img/merlina3.jpg","img/merlina4.jpg"],
@@ -52,7 +55,6 @@ if (modal) {
     "Chupetines con led Mc Donalds (30u)": ["img/mc.jpg","img/mc2.jpg",],
     "Chupetines con led Oreo (30u)": ["img/oreo1.jpg","img/oreo2.jpg",],
     "Chupetines con led unicornio (30u)": ["img/unicornioled1.jpg","img/unicornioled2.jpg"],
-    
   };
 
   let currentImages = [];
@@ -84,17 +86,15 @@ if (modal) {
       modalConsultaBtn.dataset.producto = currentTitle;
       modalConsultaBtn.dataset.precio = price ? price.textContent : '';
     }
-        //  Si el producto está sin stock, ocultar el botón "Agregar al carrito"
+
     if (modalAgregarBtn) {
       const textoPrecio = price ? price.textContent.toLowerCase() : '';
-      
       if (textoPrecio.includes('sin stock')) {
-        modalAgregarBtn.style.display = 'none'; // Oculta el botón
+        modalAgregarBtn.style.display = 'none';
       } else {
-        modalAgregarBtn.style.display = 'inline-block'; // Lo muestra normalmente
+        modalAgregarBtn.style.display = 'inline-block';
       }
     }
-
   }
 
   function actualizarModal() {
@@ -104,6 +104,7 @@ if (modal) {
     if (currentImages.length > 1) {
       prevBtn.style.display = 'flex';
       nextBtn.style.display = 'flex';
+      contador.textContent = `${currentIndex + 1} / ${currentImages.length}`;
     } else {
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'none';
@@ -118,7 +119,7 @@ if (modal) {
       actualizarModal();
     }
   };
-  
+
   nextBtn.onclick = () => {
     if (currentImages.length > 1) {
       currentIndex = (currentIndex + 1) % currentImages.length;
@@ -161,7 +162,7 @@ if (modal) {
       card.appendChild(overlay);
     }
     card.addEventListener('click', (ev) => {
-      if (card.classList.contains('promo')) return; // NO abrir modal
+      if (card.classList.contains('promo')) return;
       if (ev.target.closest('button')) return;
       abrirModal(card);
     });
@@ -209,29 +210,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ========================
-// 🔍 ZOOM EN IMAGEN DEL MODAL
+// TOAST
 // ========================
-const modalImg = document.getElementById("modal-img");
-if (modalImg) {
-  modalImg.onclick = () => {
-    modalImg.classList.toggle("zoomed");
+function mostrarToast(mensaje, tipo = "success") {
+  const toast = document.getElementById("toast");
+
+  toast.textContent = mensaje;
+  toast.className = "toast " + tipo;
+
+  toast.style.display = "block";
+  toast.classList.add("show");
+
+  // 👇 Cerrar al hacer click
+  toast.onclick = () => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.style.display = "none", 200);
   };
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.style.display = "none", 400);
+  }, 3000);
 }
 
-  window.onclick = e => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-      modalImg.classList.remove("zoomed");
-    }
-  };
+// ========================
+// ZOOM EN IMAGEN DEL MODAL
+// ========================
+const modalImgZoom = document.getElementById("modal-img");
+if (modalImgZoom) {
+  modalImgZoom.onclick = () => modalImgZoom.classList.toggle("zoomed");
+}
 
 // ========================
-//  CARRITO COMPLETO CON MODAL, CIERRE Y WHATSAPP
+// FUNCIONES DE CARRITO
 // ========================
 document.addEventListener("DOMContentLoaded", () => {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const numero = "542236010443";
 
-  const numero = "542236010443"; // tu número de WhatsApp
   const carritoBtn = document.getElementById("carrito-btn");
   const carritoDropdown = document.getElementById("carrito-dropdown");
   const carritoItemsContainer = document.getElementById("carrito-items");
@@ -239,33 +255,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const vaciarBtn = document.getElementById("vaciar-carrito");
   const carritoTotal = document.getElementById("carrito-total");
 
-  // Fondo oscuro
   const fondoModal = document.createElement("div");
   fondoModal.id = "fondo-carrito";
   Object.assign(fondoModal.style, {
-    position: "fixed",
-    inset: 0,
-    background: "rgba(0,0,0,0.5)",
-    display: "none",
-    zIndex: "998"
+    position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)",
+    display: "none", zIndex: "998"
   });
   document.body.appendChild(fondoModal);
 
   Object.assign(carritoDropdown.style, {
-    zIndex: "999",
-    position: "fixed",
-    top: "50%",
-    left: "50%",
+    zIndex: "999", position: "fixed",
+    top: "50%", left: "50%",
     transform: "translate(-50%, -50%)",
     boxShadow: "0 0 15px rgba(0,0,0,0.4)",
-    borderRadius: "12px",
-    background: "#f1ededff",
-    display: "none",
-    padding: "15px",
-    width: "300px",
+    borderRadius: "12px", background: "#f1ededff",
+    display: "none", padding: "15px", width: "300px",
   });
 
-  // Funciones de precio
   const parsePrecio = p => parseFloat(p.replace(/[^\d,]/g,"").replace(/\./g,"").replace(",","."))||0;
   const calcularTotal = () => carrito.reduce((a,i)=>a+parsePrecio(i.precio)*i.cantidad,0);
 
@@ -280,23 +286,20 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class='cantidad-btn sumar' data-nombre='${i.nombre}'>+</button>
         </div>
       `).join("");
-      // <button class='carrito-eliminar' data-nombre='${i.nombre}'>✖</button>
-    
+
     const total = calcularTotal();
-    carritoTotal.innerHTML = `<strong>Total: $${total.toLocaleString("es-AR")}</strong>`;
     carritoCount.textContent = carrito.reduce((a,i)=>a+i.cantidad,0);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     const totalProductos = carrito.reduce((a,i)=>a+i.cantidad,0);
-
     carritoTotal.innerHTML = `
       <strong>- Cantidad de productos: ${totalProductos}</strong><br>
       <strong>- Total: $${total.toLocaleString("es-AR")}</strong>
     `;
 
+    actualizarAvisoEnvioGratis(total);
   }
 
-  // Mostrar/ocultar carrito
   carritoBtn?.addEventListener("click",()=>{
     const visible = carritoDropdown.style.display==="block";
     carritoDropdown.style.display = visible?"none":"block";
@@ -308,16 +311,13 @@ document.addEventListener("DOMContentLoaded", () => {
     fondoModal.style.display="none";
   });
 
-  // Botón cerrar
   document.getElementById("cerrar-carrito")?.addEventListener("click",()=>{
     carritoDropdown.style.display="none";
     fondoModal.style.display="none";
   });
 
-  // Vaciar
   vaciarBtn?.addEventListener("click",()=>{carrito=[];actualizarCarrito();});
 
-  // Botones agregar/restar/eliminar
   document.addEventListener("click",e=>{
     if(e.target.classList.contains("sumar")){
       const item=carrito.find(p=>p.nombre===e.target.dataset.nombre);
@@ -335,8 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarCarrito();
   });
 
-// 🛒 Agregar al carrito o hacer consulta
-document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-consulta")
+  document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-consulta")
     .forEach(btn => {
       btn.addEventListener("click", e => {
         e.stopPropagation();
@@ -350,6 +349,7 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
           if (ex) ex.cantidad++;
           else carrito.push({ nombre, precio, cantidad: 1 });
           actualizarCarrito();
+          mostrarToast("Producto agregado al carrito 🛒", "warning");
           if (typeof modal !== "undefined" && modal?.style?.display === "flex") modal.style.display = "none";
           carritoDropdown.style.display = "block";
           fondoModal.style.display = "block";
@@ -362,53 +362,50 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
     });
 
   document.getElementById("enviar-carrito")?.addEventListener("click", () => {
-  if (carrito.length === 0) {
-    alert("Tu carrito está vacío 🛒");
-    return;
-  }
+    if (carrito.length === 0) { alert("Tu carrito está vacío 🛒"); return; }
 
-  let msg = "🛍️ *Quiero comenzar este pedido:*\n\n";
-  let total = 0;
-  let totalProductos = 0;
+    let msg = "🛍️ *Quiero comenzar este pedido:*\n\n";
+    let total = 0;
+    let totalProductos = 0;
 
-  carrito.forEach((i, index) => {
-    const precioUnitario = parsePrecio(i.precio);
-    const subtotal = precioUnitario * i.cantidad;
-    total += subtotal;
-    totalProductos += i.cantidad;
+    carrito.forEach((i, index) => {
+      const precioUnitario = parsePrecio(i.precio);
+      const subtotal = precioUnitario * i.cantidad;
+      total += subtotal;
+      totalProductos += i.cantidad;
+      if (i.cantidad > 1) {
+        msg += `${index + 1}. *${i.nombre}* — *${i.cantidad}* x ${i.precio} → *$${subtotal.toLocaleString("es-AR")}*\n`;
+      } else {
+        msg += `${index + 1}. *${i.nombre}* — ${i.precio}\n`;
+      }
+    });
 
-    if (i.cantidad > 1) {
-      // cantidad y subtotal en negrita si hay más de uno
-      msg += `${index + 1}. *${i.nombre}* — *${i.cantidad}* x ${i.precio} → *$${subtotal.toLocaleString("es-AR")}*\n`;
-    } else {
-      msg += `${index + 1}. *${i.nombre}* — ${i.precio}\n`;
-    }
-  });
-
-  const productosTexto =
-    totalProductos >= 2
+    const productosTexto = totalProductos >= 2
       ? `📦 *Total de productos:* *${totalProductos}*`
       : `📦 *Total de productos:* ${totalProductos}`;
 
-  msg += `\n${productosTexto}`;
+    msg += `\n${productosTexto} — *Total:* $${total.toLocaleString("es-AR")}`;
 
-  // 🚚 ENVÍO AUTOMÁTICO SEGÚN TOTAL
-  let textoEnvio = "";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  });
+
+  actualizarCarrito();
+});
+
+// ========================
+// AVISO ENVÍO GRATIS
+// ========================
+function actualizarAvisoEnvioGratis(total) {
+  const aviso = document.getElementById("aviso-envio-gratis");
+  if (!aviso) return;
 
   if (total >= 70000) {
-    textoEnvio = "🚚 *Envío:* GRATIS 🎉";
+    if (aviso.style.display === "none" || aviso.style.display === "") {
+      mostrarToast("🎉 Envío GRATIS activado 🎉", "success");
+    }
+    aviso.style.display = "block";
   } else {
-    textoEnvio = "🚚 *Envío:* $a completar";
+    aviso.style.display = "none";
   }
-
-  msg += `\n${textoEnvio}`;
-
-  msg += `\n💵 *Total:* *$${total.toLocaleString("es-AR")}*`;
-
-  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, "_blank");
-});
-
-actualizarCarrito();
-});
-
-
+}

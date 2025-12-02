@@ -1216,4 +1216,36 @@ html { scroll-behavior: smooth; }
     font-size: 1rem;
     margin-top: 1rem;
   }
-  
+  /*flot*/
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 12px 18px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 260px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  display: none;
+}
+
+.toast.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: var(--accent); /* Verde/turquesa */
+}
+
+.toast.warning {
+  background: var(--primary); /* Violeta */
+}
