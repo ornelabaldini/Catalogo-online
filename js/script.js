@@ -391,14 +391,24 @@ document.querySelectorAll(".btn-carrito, .btn-consulta, #modal-agregar, #modal-c
       : `📦 *Total de productos:* ${totalProductos}`;
 
   msg += `\n${productosTexto}`;
-  msg += `\n🚚 *Envío:* $a completar`;
+
+  // 🚚 ENVÍO AUTOMÁTICO SEGÚN TOTAL
+  let textoEnvio = "";
+
+  if (total >= 70000) {
+    textoEnvio = "🚚 *Envío:* GRATIS 🎉";
+  } else {
+    textoEnvio = "🚚 *Envío:* $a completar";
+  }
+
+  msg += `\n${textoEnvio}`;
+
   msg += `\n💵 *Total:* *$${total.toLocaleString("es-AR")}*`;
-  msg += `\n\nQuiero calcular el envío a mi ciudad.`;
 
   window.open(`https://wa.me/${numero}?text=${encodeURIComponent(msg)}`, "_blank");
 });
 
 actualizarCarrito();
-
 });
+
 
