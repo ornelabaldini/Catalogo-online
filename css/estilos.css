@@ -27,7 +27,7 @@ html, body {
   padding: 0;                           /* quita padding por defecto */
   min-width: 100vw;                     /* evita que se reduzca el ancho de la página */
   overflow-x: hidden;                   /* evita scroll horizontal inesperado */
-  font-family: 'Roboto', sans-serif;    /* fuente por defecto */
+  font-family: 'Quicksand', sans-serif;
   background: var(--bg);                /* color de fondo global */
   color: var(--text);                   /* color de texto global */
   font-size: var(--base-font);          /* tamaño base de fuente */
@@ -73,6 +73,7 @@ header {
   font-size: 1rem;                                     /* tamaño base para contenedor */
 }
 
+
 /* estilo del h1 dentro del título */
 .titulo-contenedor h1 {
   font-size: 1.5rem;                                  /* tamaño del título (ajustado para no ser gigante) */
@@ -84,6 +85,7 @@ header {
   line-height: 1.2;                                    /* altura de línea */
   font-weight: bold;                                   /* texto en negrita */
   padding: 0 1rem;                                     /* padding horizontal */
+  font-family: 'Quicksand', sans-serif;
 }
 
 nav {
@@ -92,6 +94,7 @@ nav {
   align-items: center;                                 /* alinea verticalmente */
   gap: 0.5rem;                                         /* separación entre enlaces */
   flex-wrap: wrap;                                     /* permite que los enlaces salten línea si hace falta */
+  font-family: 'Playfair Display', serif;
 }
 
 /* estilo de cada enlace del nav */
@@ -103,7 +106,7 @@ nav a {
   font-size: 3rem;                                  /* tamaño razonable para el nav */
   transition: color 0.3s;                              /* transición suave al hover */
   margin: 0.25rem;                                     /* pequeño margen alrededor */
-  font-style: italic;
+  font-family: 'Playfair Display', serif;
 }
 
 /* color al pasar el mouse por encima */
@@ -146,7 +149,7 @@ nav a:hover {
   margin: 0.5rem 0;                                    /* margen vertical */
   padding: 0 1rem;                                     /* padding horizontal */
   margin-top: 0px;
-  font-style: italic;
+  font-family: 'Playfair Display', serif;
 }
 
 /* botones del hero */
@@ -524,6 +527,7 @@ nav a:hover {
   align-items: center;                                 /* centrar verticalmente */
   flex-direction: column;                              /* columna (input encima de botones) */
   gap: 0.75rem;                                        /* separación entre elementos */
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* input de búsqueda */
@@ -539,6 +543,7 @@ nav a:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);             /* sombra sutil */
   box-sizing: border-box;                              /* box-sizing */
   font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* estado focus del input para accesibilidad */
@@ -785,6 +790,7 @@ html { scroll-behavior: smooth; }
 
   nav a {
     font-size: 1.8rem; /* enlaces más pequeños */
+    font-family: 'Playfair Display', serif;
   }
   .hero{
     margin-top: 1rem;
@@ -824,6 +830,7 @@ html { scroll-behavior: smooth; }
 
   nav a {
     font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
   }
 
   #search {
@@ -882,14 +889,13 @@ html { scroll-behavior: smooth; }
 
   .titulo-contenedor h1 {
     font-size: 1.4rem; /* título header más pequeño */
-    font-family: fantasy;
+    font-family: 'Quicksand', sans-serif;
   }
   
   nav a {
     font-size: 1.8rem;
     padding: 0.1rem;
-    font-style: italic;
-    font-family: fantasy;
+    font-family: 'Playfair Display', serif;
     font-variant-caps: all-petite-caps;
     font-weight: bold;            /* 🔹 Negrita */
     text-decoration: underline;
@@ -905,7 +911,7 @@ html { scroll-behavior: smooth; }
     font-size: 2.5rem;
     margin: 1rem 0;
     text-align: left;
-    font-family: fantasy;
+    font-family: 'Playfair Display', serif;
     text-align: center;
     margin-top: 1.5rem;
   }
