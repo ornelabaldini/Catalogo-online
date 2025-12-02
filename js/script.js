@@ -17,7 +17,8 @@ if (modal) {
   modalContent.appendChild(prevBtn);
   modalContent.appendChild(nextBtn);
   modalContent.appendChild(contador);
-
+  
+// Productos
   const imagenesProducto = {
     "Alcancia con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
     "Chupetines Merlina (30u)": ["img/merlina1.jpg","img/merlina2.jpg","img/merlina3.jpg","img/merlina4.jpg"],
