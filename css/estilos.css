@@ -125,6 +125,7 @@ nav a:hover {
   z-index: 1;                                          /* sobre algunos elementos pero debajo del header */
 }
 
+
 /* overlay decorativo dentro del hero */
 .hero-overlay {
   position: absolute;                                  /* posición absoluta dentro del hero */
@@ -1047,12 +1048,12 @@ html { scroll-behavior: smooth; }
 }
 
 #carrito-items::-webkit-scrollbar-track {
-  background: #e973fc;
+  background: linear-gradient(135deg, rgba(106,27,154,0.6), rgba(0,184,148,0.6));
   border-radius: 6px;
 }
 
 #carrito-items::-webkit-scrollbar-thumb {
-  background: #9c27b0;
+  background: black;
   border-radius: 6px;
 }
 
@@ -1245,7 +1246,7 @@ html { scroll-behavior: smooth; }
 }
 
 .toast.success {
-  background: var(--accent); /* Verde/turquesa */
+  background: linear-gradient(135deg, rgba(106,27,154,0.6), rgba(0,184,148,0.6));
 }
 
 .toast.warning {
