@@ -380,6 +380,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+      if (total >= 70000) {
+      msg += `\n\n🚚 *ENVÍO GRATIS* por compras a partir de $70.000`;
+    } else {
+      msg += `\n\n🚚 *Envío:* $ a completar`;
+    }
+
     const productosTexto = totalProductos >= 2
       ? `📦 *Total de productos:* *${totalProductos}*`
       : `📦 *Total de productos:* ${totalProductos}`;
