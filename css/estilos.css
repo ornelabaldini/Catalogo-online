@@ -1266,7 +1266,7 @@ html { scroll-behavior: smooth; }
   top: 20px;
   right: 20px;
   background: linear-gradient(135deg, rgba(106,27,154,0.6), rgba(0,184,148,0.6));
-  padding: 8px 12px;
+  padding: 14px 14px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1276,6 +1276,7 @@ html { scroll-behavior: smooth; }
   font-size: 14px;
   backdrop-filter: blur(6px);
   z-index: 1000;
+  margin-top: 1%;
 }
 
 #whatsapp-btn img {
