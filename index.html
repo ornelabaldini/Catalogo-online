@@ -885,43 +885,27 @@
 <div id="whatsapp-menu" class="hidden">
   <h3>Elegí tu consulta</h3>
 
-  <button onclick="openWa('Por qué medios se hace el envío? 👉 Por Correo Argentino.')">
+  <button data-msg="¿Por qué medios se hace el envío?">
     📦 Envíos
   </button>
 
-  <button onclick="openWa('¿Se abona antes? 👉 Sí, por transferencia. En nuestras redes tenemos referencias.')">
+  <button data-msg="¿Se abona antes?">
     💳 Formas de pago
   </button>
 
-  <button onclick="openWa('¿Cuánto tarda el envío? 👉 Entre 2 y 5 días hábiles.')">
+  <button data-msg="¿Cuánto tarda el envío?">
     ⏳ Tiempo de entrega
   </button>
 
-  <button onclick="openWa('¿De dónde son? 👉 Miramar, Buenos Aires. Enviamos a todo el país.')">
+  <button data-msg="¿De dónde son?">
     📍 Ubicación
   </button>
 
-  <button onclick="openWa('Compra mínima 👉 $50.000')">
+  <button data-msg="¿Compra mínima?">
     🛒 Compra mínima
   </button>
 </div>
 
-<script>
-  const btn = document.getElementById("whatsapp-btn");
-  const menu = document.getElementById("whatsapp-menu");
-
-  btn.onclick = () => {
-    menu.classList.toggle("hidden");
-  };
-
-  function openWa(text) {
-    const msg = encodeURIComponent(text);
-    window.open("https://wa.me/542236010443?text=" + msg, "_blank");
-  }
-</script>
-
-
-  
 
 <script src="js/script.js"></script>
 
