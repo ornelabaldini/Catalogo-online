@@ -415,3 +415,20 @@ function actualizarAvisoEnvioGratis(total) {
     aviso.style.display = "none";
   }
 }
+
+// flotante W
+const btn = document.getElementById("whatsapp-btn");
+const menu = document.getElementById("whatsapp-menu");
+const buttons = menu.querySelectorAll("button");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+
+buttons.forEach(b => {
+  b.addEventListener("click", () => {
+    const text = b.getAttribute("data-msg");
+    const msg = encodeURIComponent(text);
+    window.open("https://wa.me/542236010443?text=" + msg, "_blank");
+  });
+});

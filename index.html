@@ -19,7 +19,7 @@
     Envíos a todo el país <span class="emoji"> 🇦🇷 </span>
     </h1>
     <nav>
-      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html">Facebook/Instagram</a>
       <input type="text" id="search" placeholder="🔍 Buscá un producto..." style="margin-left:0.1rem; padding:0.3rem; border-radius:5px; border:none;">
       <p id="no-results" style="display:none; text-align:center; color:#fff; margin-top:0.5rem;"></p>
           <div id="aviso-envio-gratis" 
@@ -874,15 +874,54 @@
 
 </footer>
 
-  <!-- Botón flotante de WhatsApp 
-    <a href="https://wa.me/542236010443?text=Hola%2C%20vengo%20del%20catálogo%20y%20tengo%20un%20carrito/pregunta%20para%20hacerte%20" target="_blank" style="text-decoration: none;">
-    <div style="position:fixed; bottom:20px; right:20px; z-index:1000; display:flex; align-items:center; background-color:#25D366; padding:10px 15px; border-radius:50px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); color:white; font-family:sans-serif; font-size:14px;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
-          alt="WhatsApp"
-          style="width:25px; height:25px; margin-right:10px;">
-      <span>Hacer una consulta</span>
-    </div>
-  -->
+  <!-- Botón flotante de WhatsApp -->
+  <!-- Botón flotante -->
+<div id="whatsapp-btn">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+  <span>Consultar</span>
+</div>
+
+<!-- Ventana flotante con opciones -->
+<div id="whatsapp-menu" class="hidden">
+  <h3>Elegí tu consulta</h3>
+
+  <button onclick="openWa('Por qué medios se hace el envío? 👉 Por Correo Argentino.')">
+    📦 Envíos
+  </button>
+
+  <button onclick="openWa('¿Se abona antes? 👉 Sí, por transferencia. En nuestras redes tenemos referencias.')">
+    💳 Formas de pago
+  </button>
+
+  <button onclick="openWa('¿Cuánto tarda el envío? 👉 Entre 2 y 5 días hábiles.')">
+    ⏳ Tiempo de entrega
+  </button>
+
+  <button onclick="openWa('¿De dónde son? 👉 Miramar, Buenos Aires. Enviamos a todo el país.')">
+    📍 Ubicación
+  </button>
+
+  <button onclick="openWa('Compra mínima 👉 $50.000')">
+    🛒 Compra mínima
+  </button>
+</div>
+
+<script>
+  const btn = document.getElementById("whatsapp-btn");
+  const menu = document.getElementById("whatsapp-menu");
+
+  btn.onclick = () => {
+    menu.classList.toggle("hidden");
+  };
+
+  function openWa(text) {
+    const msg = encodeURIComponent(text);
+    window.open("https://wa.me/542236010443?text=" + msg, "_blank");
+  }
+</script>
+
+
+  
 
 <script src="js/script.js"></script>
 
