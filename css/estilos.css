@@ -126,6 +126,17 @@ nav a:hover {
   z-index: 1;                                          /* sobre algunos elementos pero debajo del header */
 }
 
+.hero-title {
+  position: absolute;
+  bottom: 20px; /* o center si querés centrar */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+  letter-spacing: 1px;
+}
 
 /* overlay decorativo dentro del hero */
 .hero-overlay {
