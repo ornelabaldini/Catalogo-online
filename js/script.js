@@ -380,8 +380,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-      if (total >= 70000) {
-      msg += `\n\n🚚 *ENVÍO GRATIS* por compras a partir de $70.000`;
+      if (total >= 900000) {
+      msg += `\n\n🚚 *ENVÍO GRATIS* por compras a partir de $900.000`;
     } else {
       msg += `\n\n🚚 *Envío:* $ a completar`;
     }
@@ -406,7 +406,7 @@ function actualizarAvisoEnvioGratis(total) {
   const aviso = document.getElementById("aviso-envio-gratis");
   if (!aviso) return;
 
-  if (total >= 70000) {
+  if (total >= 900000) {
     if (aviso.style.display === "none" || aviso.style.display === "") {
       mostrarToast("🎉 Envío GRATIS activado 🎉", "success");
     }
