@@ -311,10 +311,13 @@ document.addEventListener("DOMContentLoaded", () => {
     fondoModal.style.display="none";
   });
 
-  document.getElementById("cerrar-carrito")?.addEventListener("click",()=>{
-    carritoDropdown.style.display="none";
-    fondoModal.style.display="none";
-  });
+  function cerrarModal() {
+    carritoDropdown.style.display = "none";
+    fondoModal.style.display = "none";
+  }
+
+  document.getElementById("cerrar-carrito")?.addEventListener("click", cerrarModal);
+  document.getElementById("salir-carrito")?.addEventListener("click", cerrarModal);
 
   vaciarBtn?.addEventListener("click",()=>{carrito=[];actualizarCarrito();});
 
@@ -380,8 +383,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-      if (total >= 900000) {
-      msg += `\n\n🚚 *ENVÍO GRATIS* por compras a partir de $900.000`;
+      if (total >= 100000) {
+      msg += `\n\n*2 Alcancías GRATIS a elección, cuál queres?*`;
     } else {
       msg += `\n\n🚚 *Envío:* $ a completar`;
     }
@@ -406,9 +409,9 @@ function actualizarAvisoEnvioGratis(total) {
   const aviso = document.getElementById("aviso-envio-gratis");
   if (!aviso) return;
 
-  if (total >= 900000) {
+  if (total >= 100000) {
     if (aviso.style.display === "none" || aviso.style.display === "") {
-      mostrarToast("🎉 Envío GRATIS activado 🎉", "success");
+      mostrarToast("🎉 Conseguiste 2 alcancías gratis 🎉", "success");
     }
     aviso.style.display = "block";
   } else {
