@@ -412,7 +412,7 @@ function actualizarAvisoEnvioGratis(total) {
 
   if (total >= 100000) {
     if (aviso.style.display === "none" || aviso.style.display === "") {
-      mostrarToast("🎉 Conseguiste 2 alcancías gratis 🎉", "success");
+      mostrarToast("🎉 Conseguiste 2 alcancías gratis", "success");
     }
     aviso.style.display = "block";
   } else {
