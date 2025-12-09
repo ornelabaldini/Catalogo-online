@@ -364,44 +364,52 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-  document.getElementById("enviar-carrito")?.addEventListener("click", () => {
-    if (carrito.length === 0) { alert("Tu carrito está vacío 🛒"); return; }
+document.getElementById("enviar-carrito")?.addEventListener("click", () => {
+  if (carrito.length === 0) { 
+    alert("Tu carrito está vacío 🛒"); 
+    return; 
+  }
 
-    let msg = "🛍️ *Quiero comenzar este pedido:*\n\n";
-    let total = 0;
-    let totalProductos = 0;
+  let msg = "🛍️ *Quiero comenzar este pedido:*\n\n";
+  let total = 0;
+  let totalProductos = 0;
 
-    carrito.forEach((i, index) => {
-      const precioUnitario = parsePrecio(i.precio);
-      const subtotal = precioUnitario * i.cantidad;
-      total += subtotal;
-      totalProductos += i.cantidad;
-      if (i.cantidad > 1) {
-        msg += `${index + 1}. *${i.nombre}* — *${i.cantidad}* x ${i.precio} → *$${subtotal.toLocaleString("es-AR")}*\n`;
-      } else {
-        msg += `${index + 1}. *${i.nombre}* — ${i.precio}\n`;
-      }
-    });
+  carrito.forEach(i => {
+    const precioUnitario = parsePrecio(i.precio);
+    const subtotal = precioUnitario * i.cantidad;
+    total += subtotal;
+    totalProductos += i.cantidad;
 
-      if (total >= 100000) {
-      msg += `\n\n*2 Alcancías GRATIS a elección, cuál queres?*`;
-      msg += `\n\n🚚 *Envío:* $ a completar`;
+    // 🔹 Sin numeración
+    if (i.cantidad > 1) {
+      msg += `• *${i.nombre}* — *${i.cantidad}* x ${i.precio} → *$${subtotal.toLocaleString("es-AR")}*\n`;
     } else {
-      msg += `\n\n🚚 *Envío:* $ a completar`;
+      msg += `• *${i.nombre}* — ${i.precio}\n`;
     }
-
-    const productosTexto = totalProductos >= 2
-      ? `📦 *Total de productos:* *${totalProductos}*`
-      : `📦 *Total de productos:* ${totalProductos}`;
-
-    msg += `\n${productosTexto} — *Total:* $${total.toLocaleString("es-AR")}`;
-
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
   });
+
+  // 🔹 Bonus 2 alcancías gratis
+  if (total >= 100000) {
+    totalProductos += 2; // ➕ se suman al total final
+
+    msg += `\n\n🎁 *2 Alcancías GRATIS a elección* ¿cuál querés?\n`;
+    msg += `🚚 *Envío:* $ a completar`;
+  } else {
+    msg += `\n\n🚚 *Envío:* $ a completar`;
+  }
+
+  // 🔹 Texto final de totales
+  msg += `\n📦 *Total de productos:* ${totalProductos}`;
+  msg += ` — *Total:* $${total.toLocaleString("es-AR")}`;
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+  window.open(url, "_blank");
+});
+
 
   actualizarCarrito();
 });
+
 
 // ========================
 // AVISO ENVÍO GRATIS
