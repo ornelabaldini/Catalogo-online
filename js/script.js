@@ -385,6 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (total >= 100000) {
       msg += `\n\n*2 Alcancías GRATIS a elección, cuál queres?*`;
+      msg += `\n\n🚚 *Envío:* $ a completar`;
     } else {
       msg += `\n\n🚚 *Envío:* $ a completar`;
     }
