@@ -230,7 +230,7 @@ function mostrarToast(mensaje, tipo = "success") {
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.style.display = "none", 400);
-  }, 3000);
+  }, 2000);
 }
 
 // ========================
@@ -354,8 +354,8 @@ document.addEventListener("DOMContentLoaded", () => {
           actualizarCarrito();
           mostrarToast("Producto agregado al carrito 🛒", "warning");
           if (typeof modal !== "undefined" && modal?.style?.display === "flex") modal.style.display = "none";
-          carritoDropdown.style.display = "block";
-          fondoModal.style.display = "block";
+          //carritoDropdown.style.display = "block";
+          //fondoModal.style.display = "block";
         }
         else if (texto.includes("promo")) {
           const msg = "💬 Hola, quiero consultar sobre *" + nombre + "*.";
@@ -428,19 +428,10 @@ function actualizarAvisoEnvioGratis(total) {
   }
 }
 
-// flotante W
 const btn = document.getElementById("whatsapp-btn");
-const menu = document.getElementById("whatsapp-menu");
-const buttons = menu.querySelectorAll("button");
 
 btn.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
-});
-
-buttons.forEach(b => {
-  b.addEventListener("click", () => {
-    const text = b.getAttribute("data-msg");
-    const msg = encodeURIComponent(text);
-    window.open("https://wa.me/542236010443?text=" + msg, "_blank");
-  });
+  const numero = "542236010443";
+  const mensaje = "Hola! Vengo del catálogo y tengo una consulta...";
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
 });
