@@ -31,22 +31,26 @@
       <a href="index.html">CATÁLOGO</a>
     </nav>
   </div>
-
-  <!-- Carrito de compras -->
+    <!--  Carrito de compras -->
   <div id="carrito-contenedor">
+
     <button id="carrito-btn" aria-label="Abrir carrito">
       <i class="fas fa-shopping-cart"></i>
       <span id="carrito-count">0</span>
     </button>
 
-    <div id="carrito-dropdown">
-      <span id="cerrar-carrito" style="cursor:pointer; float:right; font-size:20px; font-weight:bold; margin:5px;">✖</span>
-      <h4>🛒 Tu pedido</h4>
+     <div id="carrito-dropdown">
+      <span id="salir-carrito" style="cursor:pointer; float:left; font-size:20px; font-weight:bold; margin:5px;">❌</span>
+      <h3>🛍️           </h3> 
+      <h3>Tu pedido:</h3>
       <ul id="carrito-items"></ul>
-      <p id="carrito-total">Total: $0</p>
-      <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
-      <button id="enviar-pedido" class="btn-enviar">Enviar pedido por WhatsApp</button>
+      <div id="carrito-footer">
+        <p id="carrito-total">Total: $0</p>
+        <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
+        <button id="enviar-carrito" class="btn-enviar">HACER PEDIDO</button>
+     </div>
     </div>
+
   </div>
 </header>
 
