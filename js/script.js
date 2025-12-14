@@ -23,7 +23,7 @@ if (modal) {
 
   // Productos
   const imagenesProducto = {
-    "Alcancia con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
+    "Alcancía con 12 gelatinas pingüino negro": ["img/pinguino2.jpg","img/pinguino5.jpg","img/pinguino3.jpg","img/pinguino4.jpg","img/pinguino6.jpg"],
     "Chupetines Merlina (30u)": ["img/merlina1.jpg","img/merlina2.jpg","img/merlina3.jpg","img/merlina4.jpg"],
     "Chupetin con polvo acido Brain(30u)": ["img/braincaja.jpg","img/chupetinBrain.jpg"],
     "Chupetin con polvo acido skull (30u)": ["img/chupetinConAcido.jpg","img/cajaChupetinAcido.jpg"],
@@ -36,7 +36,7 @@ if (modal) {
     "Halloween chupetines (30u)": ["img/halloween1.jpg","img/halloween2.jpg","img/halloween3.jpg","img/halloween4.jpg"],
     "Gelatinas con formas (30u)": ["img/gelatinaDiferentesSabores4.jpg","img/gelatinaDiferentesSabores3.jpg","img/gelatinaDiferentesSabores2.jpg","img/gelatinaDiferentesSabores5.jpg","img/gelatinaDiferentesSabores1.jpg"],
     "Chupetines de Corona con con led (30u)": ["img/chupetinesconled1.jpg","img/corona2.jpg"],
-    "Gomitas cara (30u)": ["img/gomitablandaCara3.jpg","img/gomitablandaCara2.jpg"],
+    "Gomitas Monstruo (30u)": ["img/gomitablandaCara2.jpg","img/gomitablandaCara3.jpg"],
     "Cool Mint sabores frutales (30u)": ["img/coolmint.jpg","img/coolmint2.jpg"],
     "Trompetas con chupetin y sonido (30u)": ["img/trompeta1.jpg","img/trompetas.jpg"],
     "Sorpresa capibara + chicles (30u)": ["img/sorpresacapibara1.jpg","img/sorpresacapibara2.jpg"],
@@ -55,6 +55,7 @@ if (modal) {
     "Chupetines con led Mc Donalds (30u)": ["img/mc.jpg","img/mc2.jpg",],
     "Chupetines con led Oreo (30u)": ["img/oreo1.jpg","img/oreo2.jpg",],
     "Chupetines con led unicornio (30u)": ["img/unicornioled1.jpg","img/unicornioled2.jpg"],
+    "Gomitas ojo-boca-ojo (30u)": ["img/gomitasoh1.jpg","img/gomitasoh.jpg"],
   };
 
   let currentImages = [];
@@ -230,7 +231,7 @@ function mostrarToast(mensaje, tipo = "success") {
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.style.display = "none", 400);
-  }, 2000);
+  }, 10000);
 }
 
 // ========================
