@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (noResults) {
       if (matches === 0 && filter.length > 0) {
-        noResults.textContent = "😔 No encontramos tu producto, escribinos 💬";
+        noResults.textContent = "No encontramos tu producto, escribinos";
         noResults.style.display = "block";
       } else {
         noResults.style.display = "none";
@@ -317,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fondoModal.style.display = "none";
   }
 
-  document.getElementById("cerrar-carrito")?.addEventListener("click", cerrarModal);
   document.getElementById("salir-carrito")?.addEventListener("click", cerrarModal);
 
   vaciarBtn?.addEventListener("click",()=>{carrito=[];actualizarCarrito();});
@@ -431,8 +430,11 @@ function actualizarAvisoEnvioGratis(total) {
 
 const btn = document.getElementById("whatsapp-btn");
 
-btn.addEventListener("click", () => {
+
+if (btn) {
+  btn.addEventListener("click", () => {
   const numero = "542236010443";
   const mensaje = "Hola! Vengo del catálogo y tengo una consulta...";
   window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
-});
+  })
+};
