@@ -231,7 +231,7 @@ function mostrarToast(mensaje, tipo = "success") {
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.style.display = "none", 400);
-  }, 10000);
+  }, 1000);
 }
 
 // ========================
@@ -299,6 +299,30 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     actualizarAvisoEnvioGratis(total);
+
+    let carritoTimer;
+
+    function iniciarTemporizadorCierre() {
+      // Limpiamos cualquier temporizador previo
+      clearTimeout(carritoTimer);
+
+      // Solo si el carrito está abierto
+      if (carritoDropdown.style.display === "block") {
+        carritoTimer = setTimeout(() => {
+          carritoDropdown.style.display = "none";
+          fondoModal.style.display = "none";
+        }, 10000); // 10 segundos
+      }
+    }
+
+    // Reiniciar temporizador cuando el usuario interactúa con el carrito
+    carritoDropdown.addEventListener("mouseenter", () => clearTimeout(carritoTimer));
+    carritoDropdown.addEventListener("mouseleave", iniciarTemporizadorCierre);
+
+    // Reiniciar temporizador cada vez que se abre el carrito
+    carritoBtn?.addEventListener("click", iniciarTemporizadorCierre);
+
+
   }
 
   carritoBtn?.addEventListener("click",()=>{
@@ -389,11 +413,8 @@ document.getElementById("enviar-carrito")?.addEventListener("click", () => {
   });
 
   // 🔹 Bonus 2 alcancías gratis
-  if (total >= 100000) {
-    totalProductos += 2; // ➕ se suman al total final
-
-    msg += `\n\n🎁 *2 Alcancías GRATIS a elección* ¿cuál querés?\n`;
-    msg += `🚚 *Envío:* $ a completar`;
+  if (total >= 80000) {
+    msg += `🚚 *Envío:* $ GRATIS`;
   } else {
     msg += `\n\n🚚 *Envío:* $ a completar`;
   }
@@ -418,9 +439,9 @@ function actualizarAvisoEnvioGratis(total) {
   const aviso = document.getElementById("aviso-envio-gratis");
   if (!aviso) return;
 
-  if (total >= 100000) {
+  if (total >= 80000) {
     if (aviso.style.display === "none" || aviso.style.display === "") {
-      mostrarToast("🎉 Conseguiste 2 alcancías gratis", "success");
+      mostrarToast("🎉 Conseguiste envío gratis", "success");
     }
     aviso.style.display = "block";
   } else {
