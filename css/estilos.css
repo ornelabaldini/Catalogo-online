@@ -103,11 +103,12 @@ nav a {
   color: #070000;                                      /* color de texto de los enlaces */
   text-decoration: underline;                               /* sin subrayado */
   font-weight: bold;                                   /* negrita */
-  font-size: 3rem;                                  /* tamaño razonable para el nav */
+  font-size: 4rem;                                  /* tamaño razonable para el nav */
   transition: color 0.3s;                              /* transición suave al hover */
   margin: 0.25rem;                                     /* pequeño margen alrededor */
   font-family: 'Bebas Neue', sans-serif;
   padding-right: 120px; /* deja espacio para el botón */
+  text-align: center;
 }
 
 /* color al pasar el mouse por encima */
@@ -805,7 +806,7 @@ html { scroll-behavior: smooth; }
   }
 
   nav a {
-    font-size: 1.8rem; /* enlaces más pequeños */
+    font-size: 4rem; /* enlaces más pequeños */
     font-family: 'Playfair Display', serif;
     padding-right: 120px; /* deja espacio para el botón */
   }
@@ -846,7 +847,7 @@ html { scroll-behavior: smooth; }
   }
 
   nav a {
-    font-size: 1.5rem;
+    font-size: 4rem;
     font-family: 'Playfair Display', serif;
     padding-right: 120px; /* deja espacio para el botón */
   }
@@ -868,7 +869,7 @@ html { scroll-behavior: smooth; }
   .modal-title,
   .h2,
   .img {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     margin-top: 0.5%;
     font-family: 'Bebas Neue', sans-serif;
@@ -912,7 +913,7 @@ html { scroll-behavior: smooth; }
   }
   
   nav a {
-    font-size: 1.8rem;
+    font-size: 3.2rem;
     padding: 0.1rem;
     font-family: 'Bebas Neue', sans-serif;
     font-variant-caps: all-petite-caps;
@@ -962,6 +963,21 @@ html { scroll-behavior: smooth; }
   }
   
 }
+
+@media (max-with: 331px) {
+  nav a {
+    font-size: 1srem;
+    padding: 0.1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-variant-caps: all-petite-caps;
+    font-weight: bold;            /* 🔹 Negrita */
+    text-decoration: underline;
+    padding-top: 0rem;
+    padding-right: 210px; /* deja espacio para el botón */
+  }
+
+}
+
 /* Footer (total + botones) */
 #carrito-footer {
   flex-shrink: 0;  /* nunca se achica */
@@ -1528,4 +1544,24 @@ html { scroll-behavior: smooth; }
 #carrito-dropdown,
 #fondo-carrito {
   display: none;
+}
+
+/* Pagar */
+.btn-pagar {
+  display: inline-block;
+  padding: 6px 15px;
+  background: #00b894;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-pagar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
