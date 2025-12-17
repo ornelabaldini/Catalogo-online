@@ -276,6 +276,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const parsePrecio = p => parseFloat(p.replace(/[^\d,]/g,"").replace(/\./g,"").replace(",","."))||0;
   const calcularTotal = () => carrito.reduce((a,i)=>a+parsePrecio(i.precio)*i.cantidad,0);
 
+  const btnPagarMP = document.getElementById("btn-pagar-mp");
+
+  btnPagarMP?.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío 🛒");
+      return;
+    }
+
+    let msg = "💳 *Pedido listo para abonar*\n\n";
+    let total = 0;
+    let totalProductos = 0;
+
+    carrito.forEach(i => {
+      const precioUnitario = parsePrecio(i.precio);
+      const subtotal = precioUnitario * i.cantidad;
+      total += subtotal;
+      totalProductos += i.cantidad;
+
+      if (i.cantidad > 1) {
+        msg += `• *${i.nombre}* — ${i.cantidad} x ${i.precio} → *$${subtotal.toLocaleString("es-AR")}*\n`;
+      } else {
+        msg += `• *${i.nombre}* — ${i.precio}\n`;
+      }
+    });
+
+    msg += `\n📦 *Total de productos:* ${totalProductos}`;
+    msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
+    msg += `\n\n📩 *Datos necesarios para el pedido*`;
+    msg += `\nPor favor envianos estos datos 👇`;
+    msg += `\n\n- Nombre y apellido:`;
+    msg += `\n- CUIL/DNI:`;
+    msg += `\n- Localidad:`;
+    msg += `\n- Provincia:`;
+    msg += `\n- Dirección exacta:`;
+    msg += `\n- Código postal:`;
+    msg += `\n- Teléfono:`;
+    msg += `\n- Email:`;
+
+    msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
+    msg += `\nNombre: Ana Maria Montiel`;
+    msg += `\nAlias: ana.maria.montiel`;
+    msg += `\nCVU: 0000003100012664749584`;
+    msg += `\nCUIT/CUIL: 27-20845773-5`;
+
+    msg += `\n\n📸 Una vez realizado el pago, por favor envíanos el comprobante para verificar y continuar con el envío 📦`;
+
+
+    const numero = "542236010443";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+  });
+
+
+
   function actualizarCarrito() {
     carritoItemsContainer.innerHTML = carrito.length === 0
       ? "<p class='carrito-vacio'>🛍️ Tu carrito está vacío</p>"
@@ -422,6 +479,25 @@ document.getElementById("enviar-carrito")?.addEventListener("click", () => {
   // 🔹 Texto final de totales
   msg += `\n📦 *Total de productos:* ${totalProductos}`;
   msg += ` — *Total:* $${total.toLocaleString("es-AR")}`;
+  msg += `\n\n📩 *Datos necesarios para el pedido*`;
+  msg += `\nPor favor envíanos estos datos en el mismo orden 👇`;
+  msg += `\n\n- Nombre y apellido:`;
+  msg += `\n- CUIL/DNI:`;
+  msg += `\n- Localidad:`;
+  msg += `\n- Provincia:`;
+  msg += `\n- Dirección exacta:`;
+  msg += `\n- Código postal:`;
+  msg += `\n- Teléfono:`;
+  msg += `\n- Email:`;
+
+  msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
+  msg += `\nNombre: Ana Maria Montiel`;
+  msg += `\nAlias: ana.maria.montiel`;
+  msg += `\nCVU: 0000003100012664749584`;
+  msg += `\nCUIT/CUIL: 27-20845773-5`;
+
+  msg += `\n\n✅ Una vez realizado el pago, por favor envíanos el comprobante para verificar y continuar con el envío 📦`;
+
 
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
@@ -459,3 +535,13 @@ if (btn) {
   window.open(`https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`, "_blank");
   })
 };
+
+// ========================
+// COPIAR ALIAS
+// ========================
+document.getElementById("copiar-alias")?.addEventListener("click", () => {
+  const alias = document.getElementById("alias-text").innerText;
+  navigator.clipboard.writeText(alias).then(() => {
+    mostrarToast("Alias copiado ✅", "success");
+  });
+});
