@@ -495,7 +495,7 @@ msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
 // 🔹 Envío
 if (total >= 80000) {
   msg += `\n\n🚚 *Envío:* GRATIS`;
-  msg += `\n\n📩 *Datos necesarios para el pedido*`;
+  msg += `\n\n📩 *Datos necesarios para el Correo*`;
   msg += `\nPor favor envíanos estos datos 👇`;
   msg += `\n\n- Nombre y apellido:`;
   msg += `\n- CUIL/DNI:`;
@@ -509,17 +509,16 @@ if (total >= 80000) {
   // 👉 SOLO SI ES ENVÍO GRATIS → DATOS DE PAGO
   msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
   msg += `\nNombre: Ana Maria Montiel`;
-  msg += `\nAlias: *ana.maria.montiel* 👈 (tocá y copiá)`;
-  msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
+  msg += `\nAlias: *ana.maria.montiel*`;
   msg += `\nCVU: 0000003100012664749584`;
   msg += `\nCUIT/CUIL: 27-20845773-5`;
 
-
+  msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
   msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
 } else {
   // 👉 SI NO LLEGA A ENVÍO GRATIS
   msg += `\n\n🚚 *Envío:* a completar`;
-  msg += `\n\n📩 *Datos necesarios para el pedido*`;
+  msg += `\n\n📩 *Datos necesarios para el Correo*`;
   msg += `\nPor favor envíanos estos datos 👇`;
   msg += `\n\n- Nombre y apellido:`;
   msg += `\n- CUIL/DNI:`;
@@ -553,7 +552,7 @@ function actualizarAvisoEnvioGratis(total) {
     aviso.innerHTML = "🎉 <strong>¡Tenés envío gratis!</strong>";
     aviso.style.display = "block";
   if (!envioGratisToastMostrado) {
-    mostrarToast("🎉 Tu pedido tiene ENVÍO GRATIS 🚚✨","fiesta",1500);
+    mostrarToast("🎉 Tenés ENVÍO GRATIS 🚚✨","fiesta",1500);
 
     setTimeout(() => {
       lanzarConfetti();
