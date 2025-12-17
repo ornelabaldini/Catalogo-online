@@ -231,8 +231,17 @@ function mostrarToast(mensaje, tipo = "success") {
   setTimeout(() => {
     toast.classList.remove("show");
     setTimeout(() => toast.style.display = "none", 400);
-  }, 1000);
+  }, 2000);
 }
+
+  function lanzarConfetti() {
+    confetti({
+      particleCount: 120,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
+  }
+
 
 // ========================
 // ZOOM EN IMAGEN DEL MODAL
@@ -248,6 +257,9 @@ if (modalImgZoom) {
 document.addEventListener("DOMContentLoaded", () => {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const numero = "542236010443";
+
+  let envioGratisToastMostrado = false;
+
 
   const carritoBtn = document.getElementById("carrito-btn");
   const carritoDropdown = document.getElementById("carrito-dropdown");
@@ -319,11 +331,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
     msg += `\nNombre: Ana Maria Montiel`;
-    msg += `\nAlias: ana.maria.montiel`;
+    msg += `\nAlias: *ana.maria.montiel* 👈 (tocá y copiá)`;
+    msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
     msg += `\nCVU: 0000003100012664749584`;
     msg += `\nCUIT/CUIL: 27-20845773-5`;
 
-    msg += `\n\n📸 Una vez realizado el pago, por favor envíanos el comprobante para verificar y continuar con el envío 📦`;
+
+    msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
 
 
     const numero = "542236010443";
@@ -468,19 +482,22 @@ document.getElementById("enviar-carrito")?.addEventListener("click", () => {
       msg += `• *${i.nombre}* — ${i.precio}\n`;
     }
   });
+  
+  // 🔴 COMPRA MÍNIMA
+if (total < 50000) {
+  alert("⚠️ La compra mínima es de $50.000");
+  return;
+}
 
-  // 🔹 Bonus 2 alcancías gratis
-  if (total >= 80000) {
-    msg += `🚚 *Envío:* $ GRATIS`;
-  } else {
-    msg += `\n\n🚚 *Envío:* $ a completar`;
-  }
+// 🔹 Totales separados
+msg += `\n📦 *Total de productos:* ${totalProductos}`;
+msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
 
-  // 🔹 Texto final de totales
-  msg += `\n📦 *Total de productos:* ${totalProductos}`;
-  msg += ` — *Total:* $${total.toLocaleString("es-AR")}`;
+// 🔹 Envío
+if (total >= 80000) {
+  msg += `\n\n🚚 *Envío:* GRATIS`;
   msg += `\n\n📩 *Datos necesarios para el pedido*`;
-  msg += `\nPor favor envíanos estos datos en el mismo orden 👇`;
+  msg += `\nPor favor envíanos estos datos 👇`;
   msg += `\n\n- Nombre y apellido:`;
   msg += `\n- CUIL/DNI:`;
   msg += `\n- Localidad:`;
@@ -490,14 +507,30 @@ document.getElementById("enviar-carrito")?.addEventListener("click", () => {
   msg += `\n- Teléfono:`;
   msg += `\n- Email:`;
 
+  // 👉 SOLO SI ES ENVÍO GRATIS → DATOS DE PAGO
   msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
   msg += `\nNombre: Ana Maria Montiel`;
-  msg += `\nAlias: ana.maria.montiel`;
+  msg += `\nAlias: *ana.maria.montiel* 👈 (tocá y copiá)`;
+  msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
   msg += `\nCVU: 0000003100012664749584`;
   msg += `\nCUIT/CUIL: 27-20845773-5`;
 
-  msg += `\n\n✅ Una vez realizado el pago, por favor envíanos el comprobante para verificar y continuar con el envío 📦`;
 
+  msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
+} else {
+  // 👉 SI NO LLEGA A ENVÍO GRATIS
+  msg += `\n\n🚚 *Envío:* a completar`;
+  msg += `\n\n📩 *Datos necesarios para el pedido*`;
+  msg += `\nPor favor envíanos estos datos 👇`;
+  msg += `\n\n- Nombre y apellido:`;
+  msg += `\n- CUIL/DNI:`;
+  msg += `\n- Localidad:`;
+  msg += `\n- Provincia:`;
+  msg += `\n- Dirección exacta:`;
+  msg += `\n- Código postal:`;
+  msg += `\n- Teléfono:`;
+  msg += `\n- Email:`;
+}
 
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`;
   window.open(url, "_blank");
@@ -515,15 +548,31 @@ function actualizarAvisoEnvioGratis(total) {
   const aviso = document.getElementById("aviso-envio-gratis");
   if (!aviso) return;
 
-  if (total >= 80000) {
-    if (aviso.style.display === "none" || aviso.style.display === "") {
-      mostrarToast("🎉 Conseguiste envío gratis", "success");
-    }
+  const envioGratisDesde = 80000;
+
+  if (total >= envioGratisDesde) {
+    aviso.innerHTML = "🎉 <strong>¡Tenés envío gratis!</strong>";
     aviso.style.display = "block";
+  if (!envioGratisToastMostrado) {
+    mostrarToast("🎉 Tu pedido tiene ENVÍO GRATIS 🚚✨","fiesta",1500);
+
+    setTimeout(() => {
+      lanzarConfetti();
+      }, 1500);
+
+    envioGratisToastMostrado = true;
+
+    }
   } else {
-    aviso.style.display = "none";
+    const falta = envioGratisDesde - total;
+    aviso.innerHTML = `🚚 Te faltan <strong>$${falta.toLocaleString("es-AR")}</strong> para el <b>envío gratis</b>`;
+    aviso.style.display = "block";
+
+    //  Si vuelve a bajar, permitimos que vuelva a disparar
+    envioGratisToastMostrado = false;
   }
 }
+
 
 const btn = document.getElementById("whatsapp-btn");
 
@@ -536,12 +585,3 @@ if (btn) {
   })
 };
 
-// ========================
-// COPIAR ALIAS
-// ========================
-document.getElementById("copiar-alias")?.addEventListener("click", () => {
-  const alias = document.getElementById("alias-text").innerText;
-  navigator.clipboard.writeText(alias).then(() => {
-    mostrarToast("Alias copiado ✅", "success");
-  });
-});
