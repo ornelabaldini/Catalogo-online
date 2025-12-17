@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     msg += `\n📦 *Total de productos:* ${totalProductos}`;
     msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
-    msg += `\n\n📩 *Datos necesarios para el pedido*`;
+    msg += `\n\n📩 *Datos necesarios para el Correo*`;
     msg += `\nPor favor envianos estos datos 👇`;
     msg += `\n\n- Nombre y apellido:`;
     msg += `\n- CUIL/DNI:`;
@@ -331,12 +331,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
     msg += `\nNombre: Ana Maria Montiel`;
-    msg += `\nAlias: *ana.maria.montiel* 👈 (tocá y copiá)`;
-    msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
+    msg += `\nAlias: *ana.maria.montiel*`;
     msg += `\nCVU: 0000003100012664749584`;
     msg += `\nCUIT/CUIL: 27-20845773-5`;
 
-
+    msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
     msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
 
 
