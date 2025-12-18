@@ -561,7 +561,7 @@ function actualizarAvisoEnvioGratis(total) {
     }
   } else {
     const falta = envioGratisDesde - total;
-    aviso.innerHTML = `🚚 Te faltan <strong>$${falta.toLocaleString("es-AR")}</strong> para el <b>envío gratis</b>`;
+    aviso.innerHTML = `🚚 Sumá <strong>$${falta.toLocaleString("es-AR")}</strong> y conseguí <b>envío gratis</b>`;
     aviso.style.display = "block";
 
     //  Si vuelve a bajar, permitimos que vuelva a disparar
