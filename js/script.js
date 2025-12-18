@@ -498,7 +498,6 @@ if (total >= 80000) {
   msg += `\n\n📩 *Datos necesarios para el Correo*`;
   msg += `\nPor favor envíanos estos datos 👇`;
   msg += `\n\n- Nombre y apellido:`;
-  msg += `\n- CUIL/DNI:`;
   msg += `\n- Localidad:`;
   msg += `\n- Provincia:`;
   msg += `\n- Dirección exacta:`;
@@ -507,21 +506,20 @@ if (total >= 80000) {
   msg += `\n- Email:`;
 
   // 👉 SOLO SI ES ENVÍO GRATIS → DATOS DE PAGO
-  msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
-  msg += `\nNombre: Ana Maria Montiel`;
-  msg += `\nAlias: *ana.maria.montiel*`;
-  msg += `\nCVU: 0000003100012664749584`;
-  msg += `\nCUIT/CUIL: 27-20845773-5`;
+//  msg += `\n\n💳 *Datos para abonar por Mercado Pago*`;
+ // msg += `\nNombre: Ana Maria Montiel`;
+  //msg += `\nAlias: *ana.maria.montiel*`;
+ // msg += `\nCVU: 0000003100012664749584`;
+ // msg += `\nCUIT/CUIL: 27-20845773-5`;
 
-  msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
-  msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
+ //msg += `\n💰 *Total a pagar:* $${total.toLocaleString("es-AR")}`;
+  //msg += `\n\n📸 Una vez realizado el pago, por favor envianos el comprobante para verificar y continuar con el envío 📦`;
 } else {
   // 👉 SI NO LLEGA A ENVÍO GRATIS
   msg += `\n\n🚚 *Envío:* a completar`;
   msg += `\n\n📩 *Datos necesarios para el Correo*`;
   msg += `\nPor favor envíanos estos datos 👇`;
   msg += `\n\n- Nombre y apellido:`;
-  msg += `\n- CUIL/DNI:`;
   msg += `\n- Localidad:`;
   msg += `\n- Provincia:`;
   msg += `\n- Dirección exacta:`;
