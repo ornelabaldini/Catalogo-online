@@ -30,7 +30,7 @@ html, body {
 }
 header {
   background: linear-gradient(135deg, #6a1b9a, #ab47bc); /* degradado de fondo del header */
-  padding: 0.2rem;                                       /* espacio interno del header */
+  padding: 0.00005rem;                                       /* espacio interno del header */
   text-align: center;                                  /* centra el contenido textual */
   position: fixed;                                     /* fija el header en la parte superior */
   top: 0;                                              /* posicion arriba: 0 */
@@ -105,7 +105,7 @@ nav a:hover {
 }
 .hero {
   text-align: center;                                  /* centra el texto del hero */
-  padding-top: 13rem;                             /* espacio extra arriba (visual) */
+  padding-top: 11rem;                             /* espacio extra arriba (visual) */
   max-width: 100vw;                                    /* no exceder ancho de ventana */
   background-size: cover;                              /* si tiene imagen, que cubra */
   background-position: center;                         /* centra la imagen de fondo */
@@ -1227,6 +1227,20 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 10px 25px rgba(0,0,0,0.35);
   border: 2px solid #00b894;
   animation: fiestaPop 0.6s ease-out;
+  padding: 4px 20px;
+}
+
+.aviso {
+  display:none; 
+  background: linear-gradient(135deg, rgba(106,27,154,0.6), rgba(0,184,148,0.6));; 
+  color:rgb(20, 3, 3); 
+  padding:3px; 
+  margin:2px 0; 
+  border-radius:8px; 
+  font-weight:bold; 
+  text-align:center;
+  font-size: 25px;
+  padding-bottom: 0%;
 }
 /* Botón flotante */
 #whatsapp-btn {
