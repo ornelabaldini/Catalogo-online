@@ -242,7 +242,6 @@ function mostrarToast(mensaje, tipo = "success") {
     });
   }
 
-
 // ========================
 // ZOOM EN IMAGEN DEL MODAL
 // ========================
@@ -536,7 +535,6 @@ if (total >= 80000) {
   actualizarCarrito();
 });
 
-
 // ========================
 // AVISO ENVÍO GRATIS
 // ========================
@@ -568,7 +566,6 @@ function actualizarAvisoEnvioGratis(total) {
     envioGratisToastMostrado = false;
   }
 }
-
 
 const btn = document.getElementById("whatsapp-btn");
 
